@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-exit
+[ -z "$URL" ] && echo URL to forward not defined && exit 1
+eval "cat<<EOF
+$(<index.html)
+EOF" > html/index.html
